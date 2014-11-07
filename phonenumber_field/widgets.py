@@ -48,4 +48,5 @@ class PhoneNumberPrefixWidget(MultiWidget):
 
     def value_from_datadict(self, data, files, name):
         values = super(PhoneNumberPrefixWidget, self).value_from_datadict(data, files, name)
+        if '' not in values:  # only returns the string if no values in the list is an empty string.
         return '%s.%s' % tuple(values)
